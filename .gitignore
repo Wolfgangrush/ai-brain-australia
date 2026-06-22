@@ -1,0 +1,40 @@
+# Python noise
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# Mac noise
+.DS_Store
+._*
+
+# IDE noise
+.vscode/
+.idea/
+*.swp
+
+# SENSITIVE CONTENT FIREWALL (per LEGAL_EXPOSURE_PLAYBOOK §6.D1)
+*.private.*
+.BOOK_MAPPING.*
+LINKEDIN_*
+*_DRAFT.*
+*_PRIVATE.*
+
+# Research source PDFs — only ship the digests
+_research/*.pdf
+_research/*.epub
+
+# Defensive against book content
+*BOOK*.pdf
+*BOOK*.epub
+*ANNA*
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# v0.2 drafting data — shipped 2026-05-28
+# _drafting_data/ now tracked
