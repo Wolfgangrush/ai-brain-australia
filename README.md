@@ -1,3 +1,19 @@
+<div align="center">
+
+<img src="docs/banner.png" width="820"/>
+
+**A practice brain for Australia's lawyers — local-first, running on your own machine.**
+
+Visit the live site: [wolfgangrush.github.io](https://wolfgangrush.github.io)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Local-first](https://img.shields.io/badge/local--first-on%20your%20machine-blue)
+![Jurisdiction](https://img.shields.io/badge/jurisdiction-Australia-orange)
+![Lawtech](https://img.shields.io/badge/built%20for-lawyers-lightgrey)
+
+</div>
+
+
 # 🇦🇺 AI Brain for Australia Lawyers
 
 > **Free practice OS for every Australian solo solicitor and barrister. Terminal-native. Local-first by default (Ollama + Qwen3 — nothing leaves your laptop). Cloud-LLM optional with the [Pseudonymisation Gateway](https://github.com/Wolfgangrush/pseudonymisation-gateway) sanitising PII before any prompt leaves the machine. ⚠️ Section 77 My Health Records data: use Local Ollama tier only — Gateway sanitisation does not cure the offshore-handling prohibition. Built for the LPUL era + Tranche 2 AML + Section 77 reality.**
