@@ -25,8 +25,8 @@ import json
 import sys
 from typing import Any, Dict, List, Tuple
 
-from ailawfirm_australia.brain.router import think
 from ailawfirm_australia.brain import memory
+from ailawfirm_australia.brain.router import think
 
 # ---------------------------------------------------------------------------
 # Terminal niceties

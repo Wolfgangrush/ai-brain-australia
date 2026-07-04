@@ -9,7 +9,6 @@ import importlib
 
 from ailawfirm_australia.brain import memory
 
-
 AGENTS = (
     "matter_agent",
     "citation_agent",
