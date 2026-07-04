@@ -116,9 +116,7 @@ def render(response: Dict[str, Any]) -> str:
 
     if not response.get("ok", False):
         # Error path — make it impossible to miss.
-        lines: List[str] = [
-            _c(_RED, f"⚠️  {response.get('error', 'unknown error')}")
-        ]
+        lines: List[str] = [_c(_RED, f"⚠️  {response.get('error', 'unknown error')}")]
         intent = response.get("intent")
         agent = response.get("agent")
         if intent:
@@ -133,13 +131,13 @@ def render(response: Dict[str, Any]) -> str:
     if not isinstance(result, dict) or not result:
         # Some country routers return the agent's fields flat at the top level
         # instead of nested under "result" — render those directly.
-        result = {k: v for k, v in response.items()
-                  if k not in ("ok", "intent", "agent", "answer", "query")}
+        result = {
+            k: v
+            for k, v in response.items()
+            if k not in ("ok", "intent", "agent", "answer", "query")
+        }
 
-    header = (
-        _c(_BOLD, _agent_label(agent))
-        + _c(_DIM, f"  ·  intent: {intent}")
-    )
+    header = _c(_BOLD, _agent_label(agent)) + _c(_DIM, f"  ·  intent: {intent}")
     out: List[str] = [header]
 
     # AI specialist answer — present only when a host LLM (GLM/Claude/…) backed the
@@ -158,9 +156,7 @@ def render(response: Dict[str, Any]) -> str:
         return "\n".join(out)
 
     # Drop the redundant "agent" key — it's already in the header.
-    items: List[Tuple[str, Any]] = [
-        (k, v) for k, v in result.items() if k != "agent"
-    ]
+    items: List[Tuple[str, Any]] = [(k, v) for k, v in result.items() if k != "agent"]
 
     if not items:
         out.append(_c(_DIM, "(empty result)"))
@@ -189,8 +185,7 @@ def run_ask(query: str) -> int:
     """
     if not query or not query.strip():
         print(
-            "usage: repl ask <query>  "
-            "(or run `repl chat` for the interactive REPL)",
+            "usage: repl ask <query>  (or run `repl chat` for the interactive REPL)",
             file=sys.stderr,
         )
         return 1

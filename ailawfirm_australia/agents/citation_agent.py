@@ -216,9 +216,7 @@ def handle(payload: str) -> dict:
         }
 
     # Prefer medium-neutral or reported brackets; fall back to the first bracket cluster.
-    candidates = re.findall(
-        r"\[[0-9]{4}\]\s*[A-Za-z][A-Za-z\.\s]*?\s*\d+", text
-    ) + re.findall(
+    candidates = re.findall(r"\[[0-9]{4}\]\s*[A-Za-z][A-Za-z\.\s]*?\s*\d+", text) + re.findall(
         r"\([0-9]{4}\)\s*\d+\s*[A-Za-z\.\s]+?\s*\d+", text
     )
     citation = candidates[0].strip() if candidates else text
